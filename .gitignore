@@ -1,0 +1,41 @@
+# Maven build artifacts
+target/
+
+# Legacy NetBeans build and dist artifacts
+build/
+dist/
+nbproject/private/
+nbproject/project.properties.bak
+nbproject/genfiles.properties
+nbproject/build-impl.xml
+
+# Quarkus temporary files
+.quarkus/
+
+# IDE specific files
+# Eclipse
+.classpath
+.project
+.settings/
+.factorypath
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# NetBeans (user specific)
+nbproject/private/config.properties
+nbproject/private/private.properties
+
+# Logs
+log/
+*.log
+
+# OS & Environment
+.DS_Store
+Thumbs.db
+*.swp
+*~
