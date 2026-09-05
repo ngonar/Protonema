@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: protonema
+  labels:
+    app: protonema
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: protonema
+  template:
+    metadata:
+      labels:
+        app: protonema
+    spec:
+      containers:
+        - name: protonema
+          image: protonema:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+            - name: trxman
+              containerPort: 2333
+            - name: srv
+              containerPort: 9991
+            - name: biller
+              containerPort: 2300
+          env:
+            - name: QUARKUS_HTTP_HOST
+              value: "0.0.0.0"
+          livenessProbe:
+            httpGet:
+              path: /api/iso/status
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /api/iso/status
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "1000m"
