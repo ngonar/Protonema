@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: protonema.ISO8583TransactionTest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.33 s -- in protonema.ISO8583TransactionTest
