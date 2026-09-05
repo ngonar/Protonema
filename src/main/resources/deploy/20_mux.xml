@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mux class="org.jpos.q2.iso.QMUX" logger="Q2" name="jPOS-AUTORESPONDER">
+    <in>biller-receive</in>
+    <out>biller-send</out>
+    <ready>biller-channel.ready</ready>
+    <property name="debug" value="true"/>
+</mux>

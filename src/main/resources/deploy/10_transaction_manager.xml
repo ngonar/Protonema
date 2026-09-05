@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<txnmgr name="SimpleTransactionManager" logger="Q2" class="org.jpos.transaction.TransactionManager">
+    <property name="space" value="transient:default" />
+    <property name="queue" value="TXNQueue" />
+    <property name="sessions" value="5" />
+    <property name="debug" value="true" />
+
+    <participant class="selector.Switch" name="Switch" logger="Q2">
+        <property name="0100" value="Inquiry" />
+        <property name="0200" value="Transaction" />
+        <property name="0800" value="Network" />
+    </participant>
+    
+    <participant class="participant.SenderResponseParticipant" logger="Q2"/>
+    
+    <group name="Transaction">
+        <participant class="participant.TransactionResponseParticipant" logger="Q2" />
+    </group>
+
+    <group name="Network">
+        <participant class="participant.NetworkParticipant" logger="Q2" />
+    </group>
+    
+    <group name="Inquiry">
+        <participant class="participant.InquiryParticipant" logger="Q2"/>
+    </group>
+
+</txnmgr>

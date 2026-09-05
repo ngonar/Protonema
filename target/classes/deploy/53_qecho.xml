@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qechojpa name="echo-biller" class="protonema.QEcho">
+    <attr name="tickInterval" type="java.lang.Long">60000</attr>
+</qechojpa>

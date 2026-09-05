@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server name="srv" class="org.jpos.q2.iso.QServer" logger="Q2">
+    <attr name="port" type="java.lang.Integer">9991</attr>
+    <attr name="minSessions" type="java.lang.Integer">1</attr>
+    <attr name="maxSessions" type="java.lang.Integer">150</attr>
+    
+    <channel name="ncc.channel" 
+             class="org.jpos.iso.channel.ASCIIChannel" 
+             packager="org.jpos.iso.packager.ISO87APackager" logger="Q2" />
+    
+    <request-listener class="protonema.Protonema2" logger="Q2" realm="info" >
+        
+    </request-listener>
+    
+</server>
